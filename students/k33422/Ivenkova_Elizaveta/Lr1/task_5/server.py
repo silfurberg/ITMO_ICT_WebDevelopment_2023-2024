@@ -126,7 +126,7 @@ class MyHTTPServer:
         logging.debug(f'request_line: {method} {target} {version}')
         headers = self.parse_headers(rfile)
         logging.debug(f'headers:\n{headers}')
-        self.check_host(headers)
+        # self.check_host(headers)
 
         return Request(method, target, version, headers, rfile)
 

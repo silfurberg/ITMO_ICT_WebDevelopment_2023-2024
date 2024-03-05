@@ -1,0 +1,30 @@
+{% extends 'extends/navbar.html' %}
+{% block title %}
+    Оценки
+{% endblock %}
+
+{% block head %}
+    <style>
+     table {
+         width: auto;
+     }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% for subject, username_grades in subject_username_grades.items %}
+        <h2>{{ subject }}</h2>
+        <table>
+            {%  for username, grades in username_grades.items %}
+                <tr>
+                    <td>
+                        {{ username }}
+                    </td>
+                    {% for grade in grades %}
+                        <td>{{ grade }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Owner list</title>
+</head>
+<body>
+{% for object in object_list %}
+    <p>Username: {{ object.username}}</p>
+    <p>First name: {{ object.first_name }}</p>
+    <p>BD: {{ object.birth_date }}</p>
+{% endfor %}
+</body>
+</html>

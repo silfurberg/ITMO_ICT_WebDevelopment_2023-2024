@@ -10,3 +10,8 @@ nav:
       - lab1/ex3.md
       - lab1/ex4.md
       - lab1/ex5.md
+  - "Лабораторная работа 2":
+      - lab2/urls.md
+      - lab2/models.md
+      - lab2/views.md
+      - lab2/forms.md

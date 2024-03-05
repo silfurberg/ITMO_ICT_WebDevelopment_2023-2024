@@ -1,0 +1,98 @@
+{% extends 'extends/navbar.html' %}
+{% block title %}
+    Homeworks
+{% endblock %}
+
+{% block body %}
+    {% load homework_filter_tags %}
+
+    {% with object_list|get_not_submitted as filtered_objs %}
+        <h2>Несданные</h2>
+        {% if not filtered_objs %}
+            <p>Нет несданных работ</p>
+        {% else %}
+            <table>
+                <tr>
+                    <th>Предмет</th>
+                    <th>Описание задания</th>
+                    <th>Дата выдачи</th>
+                    <th>Дата дедлайна</th>
+                    <th>Макс. баллов</th>
+                    <th>Штраф</th>
+                    <th>Сдать</th>
+                </tr>
+                {% for obj in filtered_objs %}
+                    <tr>
+                        <td>{{ obj.homework.subject }}</td>
+                        <td>{{ obj.homework.description }}</td>
+                        <td>{{ obj.homework.start_date }}</td>
+                        <td>{{ obj.homework.end_date }}</td>
+                        <td>{{ obj.homework.max_points }}</td>
+                        <td>{{ obj.homework.fine_points }}</td>
+
+                        <td><a href="{{  obj.get_submit_url }}">Сделать</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    {% endwith %}
+
+    {% with object_list|get_submitted_not_graded as filtered_objs %}
+        <h2>Сданные, но неоцененные</h2>
+        {% if not filtered_objs %}
+            <p>Нет сданных, но неоцененных</p>
+        {% else %}
+            <table>
+                <tr>
+                    <th>Предмет</th>
+                    <th>Описание задания</th>
+                    <th>Дата выдачи</th>
+                    <th>Дата дедлайна</th>
+                    <th>Макс. баллов</th>
+                    <th>Штраф</th>
+                    <th>Редактировать</th>
+                </tr>
+                {% for obj in filtered_objs %}
+                    <tr>
+                        <td>{{ obj.homework.subject }}</td>
+                        <td>{{ obj.homework.description }}</td>
+                        <td>{{ obj.homework.start_date }}</td>
+                        <td>{{ obj.homework.end_date }}</td>
+                        <td>{{ obj.homework.max_points }}</td>
+                        <td>{{ obj.homework.fine_points }}</td>
+                        <td><a href="{{  obj.get_submit_url }}">Редактировать</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    {% endwith %}
+
+
+    {% with object_list|get_graded as filtered_objs %}
+        <h2>Оцененные </h2>
+        {% if not filtered_objs %}
+            <p>Нет оцененных</p>
+        {% else %}
+            <table>
+                <tr>
+                    <th>Предмет</th>
+                    <th>Описание задания</th>
+                    <th>Дата выдачи</th>
+                    <th>Дата дедлайна</th>
+                    <th>Макс. баллов</th>
+                    <th>Оценка</th>
+                </tr>
+                {% for obj in filtered_objs %}
+                    <tr>
+                        <td>{{ obj.homework.subject }}</td>
+                        <td>{{ obj.homework.description }}</td>
+                        <td>{{ obj.homework.start_date }}</td>
+                        <td>{{ obj.homework.end_date }}</td>
+                        <td>{{ obj.homework.max_points }}</td>
+                        <td>{{ obj.mark }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
