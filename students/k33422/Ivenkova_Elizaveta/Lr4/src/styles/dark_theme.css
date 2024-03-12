@@ -1,0 +1,86 @@
+
+body {
+    background-color: #121212;
+    color: #e4e4e4;
+}
+
+/* Adjust colors for other elements as needed */
+.card {
+    background-color: #1e1e1e;
+    color: #e4e4e4;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+}
+
+b-dropdown-item{
+    background-color: #4D5154;
+}
+
+select{
+    background-color: black;
+    color: white;
+}
+
+/*input{*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*}*/
+/*.b-navbar{*/
+/*    background-color: #ffffff !important; !* Black background *!*/
+/*    color: #ffffff !important; !* White text *!*/
+/*}*/
+
+/*!* Navbar brand color *!*/
+/*.b-navbar .b-navbar-brand {*/
+/*    color: #fff !important; !* White text *!*/
+/*}*/
+
+/*!* Navbar nav items color *!*/
+/*.b-navbar .nav-link, .b-navbar .dropdown-toggle {*/
+/*    color: #fff !important; !* White text for unselected items *!*/
+/*}*/
+
+/*!* Example of setting a different color for an active (selected) nav item *!*/
+/*!* This might require additional logic to toggle an 'active' class based on your application's routing *!*/
+/*.b-navbar .nav-link.active, .b-navbar .dropdown-toggle.active {*/
+/*    color: #007bff !important; !* Blue color for selected item *!*/
+/*}*/
+
+/*!* Adjust dropdown menu background *!*/
+/*.b-navbar .dropdown-menu {*/
+/*    background-color: #000 !important; !* Black background for dropdown *!*/
+/*}*/
+
+/*!* Dropdown item text color *!*/
+/*.b-navbar .dropdown-item {*/
+/*    color: #fff !important; !* White text *!*/
+/*}*/
+
+/* Customizing tables for dark theme */
+.table {
+    color: #e4e4e4; /* Light text color for table content */
+}
+
+.table thead th {
+    color: #e4e4e4; /* Light text color for table headings */
+}
+
+.table tbody tr {
+    background-color: #1e1e1e; /* Dark background for table rows */
+}
+
+.table tbody tr td {
+    color: #e4e4e4; /* Light text color for table data */
+}
+
+
+:root {
+    --bs-body-bg: #121212;
+    --bs-body-color: #e4e4e4;
+    --bs-primary: #0d6efd; /* Adjust if needed */
+    --bs-secondary: #6c757d; /* Adjust if needed */
+    /* Add more overrides as needed */
+}
