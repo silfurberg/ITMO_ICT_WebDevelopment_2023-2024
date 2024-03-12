@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Описание API - My Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 API";
+        var mkdocs_page_input_path = "lab3\\api_description.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Лабораторная работа 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex1/">Упраженение 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex2/">Упражнение 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex3/">Упражнение 3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex4/">Упраженение 4</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex5/">Упражнение 5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Лабораторная работа 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab2/practice/">Практика </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab2/urls/">urls</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab2/models/">models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab2/views/">views</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab2/forms/">forms</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Лабораторная работа 3</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../practice3_1/">Практика</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Описание API</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#lab3">/lab3</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lab3reader">lab3/reader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lab3statistics">lab3/statistics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lab3book_instance">lab3/book_instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lab3book">lab3/book</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#auth">/auth</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">Как происходит аутентификация?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">Входные точки для аутентификации</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../filters/">Filters</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../models/">models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../serializers/">Serializers</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Лабораторная работа 4</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab4/practice_4/">Практика </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab4/book_instances/">Экземпляры книг</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab4/login_registration/">Логин, регистрация обновление данных пользователя</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab4/reader/">Работа с читателями</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab4/statistics/">Страница со статистикой</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Лабораторная работа 3</li>
+      <li class="breadcrumb-item active">Описание API</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api">Описание API</h1>
+<h2 id="lab3">/lab3</h2>
+<h3 id="lab3reader">lab3/reader</h3>
+<p><strong>lab3/reader/books/\&lt;int:reader_pk&gt;</strong>\
+Методы: GET\
+Описание: Возвращает все книги читателя</p>
+<p><strong>lab3/reader/outdated</strong>\
+Методы: GET\
+Описание: Возвращает всех читателей, с просроценными книгами</p>
+<p><strong>lab3/reader/rare_books</strong>\
+Методы: GET\
+Описание: Возвращает всех читателей, у которых есть книга, количество экземпляров которой меньше 2-х</p>
+<p><strong>lab3/reader/books/book_month_ago</strong>\
+Методы: GET\
+Описание: Возвращает всех читателей, которые взяли книгу более месяца назад</p>
+<p><strong>lab3/reader/list</strong>\
+Методы: GET\
+Описание: Возвращает список читателей</p>
+<p><strong>lab3/reader/create</strong>\
+Методы: POST\
+Описание: Позволяет создать читателя\
+Данные: Все поля читателя</p>
+<pre><code class="language-json">{
+    &quot;reader_number&quot;: &lt;str&gt;,
+    &quot;registration_date&quot;: &lt;str&gt; in format of yyyy-mm-dd,
+    &quot;active&quot;: &lt;bool&gt;,
+    &quot;first_name&quot;: &lt;str&gt;,
+    &quot;last_name&quot;: &lt;str&gt;,
+    &quot;passport_number&quot;: &lt;str&gt;,
+    &quot;birth_date&quot;: &lt;str&gt; in format of yyyy-mm-dd,
+    &quot;address&quot;: &lt;str&gt;,
+    &quot;mobile_number&quot;: &lt;str&gt;
+}
+</code></pre>
+<pre><code class="language-json">{
+    &quot;reader_number&quot;: &quot;211232&quot;,
+    &quot;registration_date&quot;: &quot;2024-03-07&quot;,
+    &quot;active&quot;: true,
+    &quot;first_name&quot;: &quot;Anton&quot;,
+    &quot;last_name&quot;: &quot;Votykov&quot;,
+    &quot;passport_number&quot;: &quot;2348172389&quot;,
+    &quot;birth_date&quot;: &quot;2010-01-08&quot;,
+    &quot;address&quot;: &quot;SPB, krasilnikov,  10&quot;,
+    &quot;mobile_number&quot;: &quot;+78005553535&quot;
+}
+</code></pre>
+<p><strong>lab3/reader/add_book</strong>\
+Методы: POST\
+Описание: Позволяет дать книгу читателю\
+Данные:</p>
+<pre><code class="language-json">{
+    &quot;start_date&quot;: &lt;date&gt;,
+    &quot;end_date&quot;: &lt;date&gt; nullabble,
+    &quot;book_instance&quot;: &lt;int&gt; pk of book instance,
+    &quot;reader&quot;: &lt;int&gt; pk of reader
+}
+</code></pre>
+<h3 id="lab3statistics">lab3/statistics</h3>
+<p><strong>lab3/statistics/education</strong>\
+Методы: GET\
+Описание: Возвращает распределение постетителей библиотеки по уровню образования</p>
+<p><strong>lab3/statistics/age</strong>\
+Методы: GET\
+Описание: Возвращает распределение посетителей библиотеки по возрасту</p>
+<p><strong>lab3/statistics/room/\&lt;int:pk&gt;</strong>\
+Методы: GET\
+Описание: Возвращает статистику читательского зала\
+GET-параметры:
+* date_after - дата, с которой начинается подсчет статистики
+* date_before - дата, до которой идет идет подсчет статистики\</p>
+<p>Пример запроса: \
+<code>/lab3/statistics/room/1?date_after=2023-01-01&amp;date_before=2024-01-01</code></p>
+<p><strong>lab3/statistics/room/list</strong>\
+Методы: GET\
+Описание: Возвращает статистику обоих залов в виде списка
+GET-параметры:
+* date_after - дата, с которой начинается подсчет статистики
+* date_before - дата, до которой идет идет подсчет статистики\</p>
+<p>Пример запроса: \
+<code>/lab3/statistics/room/list?date_after=2023-01-01&amp;date_before=2024-01-01</code></p>
+<p><strong>lab3/statistics/library</strong>\
+Методы: GET\
+Описание: Возвращает статистику библиотеки
+GET-параметры:
+* date_after - дата, с которой начинается подсчет статистики
+* date_before - дата, до которой идет идет подсчет статистики\</p>
+<p>Пример запроса: \
+<code>/lab3/statistics/library?date_after=2023-01-01&amp;date_before=2024-01-01</code></p>
+<h3 id="lab3book_instance">lab3/book_instance</h3>
+<p><strong>lab3/book_instance/list</strong>\
+Методы: GET\
+Описание: Возвращает список экземпляров книг</p>
+<p><strong>lab3/book_instance/\&lt;int:pk&gt;</strong>\
+Методы: GET\
+Описание: Возвращает экземпляр книги</p>
+<p><strong>lab3/book_instance/remove/\&lt;int:pk&gt;</strong>\
+Методы: GET\
+Описание: Удаляет экземпляр книги</p>
+<p><strong>lab3/book_instance/update/\&lt;int:pk&gt;</strong>\
+Методы: GET\
+Описание: Обновляет экземпляр книги
+Данные: </p>
+<pre><code class="language-json">{
+    &quot;code&quot;: &lt;string&gt;,
+    &quot;quality&quot;: &lt;enum ['b', 'g', 'n']&gt;,
+    &quot;book&quot;: &lt;int&gt; pk of book,
+}
+</code></pre>
+<p><strong>lab3/book_instance/create</strong>\
+Методы: POST\
+Описание: Создает экземпляр книги\
+Данные: поля модели <code>book_instance</code></p>
+<pre><code class="language-json">{
+    &quot;code&quot;: &lt;string&gt;,
+    &quot;quality&quot;: &lt;enum ['b', 'g', 'n']&gt;,
+    &quot;book&quot;: &lt;int&gt; pk of book,
+    &quot;room&quot;: &lt;int&gt; pk of room
+}
+</code></pre>
+<h3 id="lab3book">lab3/book</h3>
+<p><strong>lab3/book/create</strong>\
+Методы: POST\
+Описание: Создает экземпляр книги
+Данные: поля модели <code>book</code></p>
+<pre><code class="language-json">{
+    &quot;authors&quot;: &lt;list[int]&gt; list of author's pks,
+    &quot;title&quot;: &lt;string&gt;,
+    &quot;year&quot;: &lt;int&gt;,
+    &quot;section&quot;: &lt;int&gt; pk of section,
+    &quot;publisher&quot;: &lt;int&gt; pk of publisher
+}
+</code></pre>
+<h2 id="auth">/auth</h2>
+<h3 id="_1">Как происходит аутентификация?</h3>
+<p>При помощи <code>/auth/token/login/</code>  получаем токен, затем передаем токен в headers следующим обрзом</p>
+<pre><code>Authorization: token &lt;ваш токен&gt;
+</code></pre>
+<h3 id="_2">Входные точки для аутентификации</h3>
+<p><strong>/auth/users/</strong>\
+Метод: GET\
+Описание: Получить информацию о пользователях</p>
+<p>Метод: POST\
+Описание: Создает пользователя\
+Данные:</p>
+<pre><code class="language-json">{
+  'password': ...
+  'username':...,
+  // Остальные поля, которые есть пользователя
+}
+</code></pre>
+<p><strong>/auth/users/me/</strong>\
+Метод: GET\
+Описание: Получить данные текущего пользователя</p>
+<p>Метод: PUT\
+Описание: Изменение всех полей пользователя\
+Данные: необходимо передать все поля, которые есть у пользователя</p>
+<p>Метод: PATCH\
+Описание: Изменение только некоторых полей пользователя\
+Данные: поля, которые хотим изменить</p>
+<p><strong>/auth/token/login</strong>\
+Метод: POST\
+Описание: позволяет получить токен для аутентификации\
+Данные:</p>
+<pre><code class="language-json">{
+  'username': ...,
+  'password': ...
+}
+</code></pre>
+<p><strong>/auth/token/logout</strong>\
+Метод: POST\
+Описание: удаляет токен </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../practice3_1/" class="btn btn-neutral float-left" title="Практика"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../views/" class="btn btn-neutral float-right" title="Views">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../practice3_1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../views/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

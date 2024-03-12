@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Упражнение 3 - My Docs</title>
+    <title>Filters - My Docs</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u0423\u043f\u0440\u0430\u0436\u043d\u0435\u043d\u0438\u0435 3";
-        var mkdocs_page_input_path = "lab1\\ex3.md";
+        var mkdocs_page_name = "Filters";
+        var mkdocs_page_input_path = "lab3\\filters.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -40,26 +40,16 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Лабораторная работа 1</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../ex1/">Упраженение 1</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex1/">Упраженение 1</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../ex2/">Упражнение 2</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex2/">Упражнение 2</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Упражнение 3</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">Код</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">Сервер</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#indexhtml">index.html</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex3/">Упражнение 3</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../ex4/">Упраженение 4</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex4/">Упраженение 4</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../ex5/">Упражнение 5</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lab1/ex5/">Упражнение 5</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Лабораторная работа 2</span></p>
@@ -76,18 +66,20 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Лабораторная работа 3</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../lab3/practice3_1/">Практика</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../practice3_1/">Практика</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../lab3/api_description/">Описание API</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../api_description/">Описание API</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../lab3/views/">Views</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../lab3/filters/">Filters</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Filters</a>
+    <ul class="current">
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../lab3/models/">models</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../models/">models</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../lab3/serializers/">Serializers</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../serializers/">Serializers</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Лабораторная работа 4</span></p>
@@ -117,8 +109,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Лабораторная работа 1</li>
-      <li class="breadcrumb-item active">Упражнение 3</li>
+          <li class="breadcrumb-item">Лабораторная работа 3</li>
+      <li class="breadcrumb-item active">Filters</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -127,61 +119,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="3">Упражнение 3</h1>
-<h2 id="_1">Код</h2>
-<h3 id="_2">Сервер</h3>
-<pre><code class="language-python">import socket
+                <h1 id="filters">Filters</h1>
+<pre><code class="language-python">import django_filters as filters
+from lab3 import models 
 
 
-def get_webpage_response():
-    response_type = 'HTTP/1.0 200 OK\n'
-    headers = 'Content-Type: text/html\n\n'
-    with open('index.html') as f:
-        content = &quot;&quot;.join(f.readlines())
+class ReaderRegistrationDateRangeFilter(filters.FilterSet):
 
-    response_raw = response_type + headers + content
-    response_encoded = response_raw.encode('utf-8')
-    return response_encoded
+    date = filters.DateFromToRangeFilter(field_name='registration_date')
+
+    class Meta:
+        model = models.Reader
+        fields = ['date']
 
 
-def main():
-    server_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_connection.bind(('127.0.0.1', 14900))
-    server_connection.listen(10)
-    print(f'Переходи по адресу: 127.0.0.1:14900')
+class BookTakenDateRangeFilter(filters.FilterSet):
+    date = filters.DateFromToRangeFilter(field_name='start_date')
 
-    while True:
-        try:
-            client_connection, address = server_connection.accept()
-
-            print(client_connection)
-            webpage_response = get_webpage_response()
-            client_connection.send(webpage_response)
-        except KeyboardInterrupt:
-            break
-    server_connection.close()
+    class Meta:
+        model = models.ReaderBookHistory
+        fields = ['date']
 
 
-if __name__ == '__main__':
-    main()
-</code></pre>
-<h3 id="indexhtml">index.html</h3>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;The best website ever existed&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-Lorem Ipsum Dolor Sit O Met
-&lt;/body&gt;
-&lt;/html&gt;
+class RoomRegistrationDateRangeFilter(filters.FilterSet):
+    date = filters.DateFromToRangeFilter(field_name='start_date')
+
+    class Meta:
+        model = models.ReaderRoomHistory
+        fields = ['date']
 </code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ex2/" class="btn btn-neutral float-left" title="Упражнение 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../ex4/" class="btn btn-neutral float-right" title="Упраженение 4">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../views/" class="btn btn-neutral float-left" title="Views"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../models/" class="btn btn-neutral float-right" title="models">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -204,10 +176,10 @@ Lorem Ipsum Dolor Sit O Met
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../ex2/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../views/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../ex4/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../models/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
